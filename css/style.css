@@ -31,7 +31,9 @@
          url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
     font-display: swap;
 } 
-
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 :root{
     --colorGreen : #cedfc3;
     --colorDGreen : #647367;
@@ -48,6 +50,13 @@ body{
     max-width:1280px;
     margin: 0 auto;
 }
+.d-flex{ display: flex !important;}
+.flex-wrap{ flex-wrap: wrap !important;}
+/* 양옆 넘치면 밑으로 내리겠다 */
+.jcb{ justify-content: space-between !important;}
+.jcc{ justify-content: center !important;}
+.aic{ align-items: center !important;}
+.w-100{ width: 100% !important;}
 
 #mainBanner{
     background: url(../img/bg.jpg) no-repeat ;
@@ -79,15 +88,17 @@ body{
     display:inline-flex;   
     margin-top: -5rem;
     width:100%;
+    margin-bottom: 6rem;
 }
 .description li{
     background-color: var(--colorGreen);
     flex-grow: 1; /* 나머지 영역만큼 맞춰줄께*/
-    margin: 0  0.5rem;
+    margin: 0  1rem;
     padding: 1rem;
     background-repeat: no-repeat;
     background-size: auto 50%;
     border:1.5rem solid var(--colorGreen);
+    box-shadow: 6px 6px 16px rgba(0,0,0,0.3);
 }
 .description li p{
     color:var(--colorDGreen);
@@ -108,6 +119,21 @@ body{
     background-image: url(../img/box3.png); 
     background-position: top right;     
 }
+.description li:before{
+    background-color: #efffe4;
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    text-indent: -1rem;
+    border-radius: 50%;
+    color: var(--colorDGreen);
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 2.5em; 
+     /* em-현재 사이즈에서 계산  */
+
+}
 .description .face:before{
     content: "01";
 }
@@ -116,4 +142,67 @@ body{
 }
 .description .box2:before{
     content: "03";
+}
+
+#md{
+    padding-bottom: 7rem;
+
+}
+#md h2,
+#thumb h2{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--colorDGreen);
+    position: relative;
+}
+#md h2 strong,
+#thumb h2 strong{
+    position: relative;
+}
+#md h2 strong > span,
+#thumb h2 strong > span{
+    position: relative;
+}
+#md h2 strong:before,
+#thumb h2 strong:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 40%;
+    background-color: #e9e9b4;
+}
+#md .explain li{
+    border: 1px solid var(--colorDGreen);
+    padding: 0 1rem;
+    line-height: 2;
+    border-radius: 2rem;
+    margin: 0 0.5rem 0 0;
+}
+#md .explain p{
+    margin: 3rem 0;
+    font-size: 2em;
+}
+#md .explain a{
+    display: inline-block;
+    color: white;
+    background-color: var(--colorBtn);
+    font-size: 1rem;
+    line-height: 2.5;
+    /* 라인하이트는 단위 넣지 않는다 - 글자 기준으로 함 */
+    padding: 0 2rem;
+    border-radius: 3rem;
+    text-decoration: none;
+}
+#md .girls{
+    max-width: 512px;
+    /* 이미지 원래 사이즈 - 확대해도 원 사이즈 넘지 않겠다 */
+    width: 40%;
+    margin: 0 5%;
+}
+#thumb{
+    background-color: var(--colorGreen);
+    padding: 5rem 0;
 }
