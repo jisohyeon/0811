@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.js"
+    integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            var count=0;
+            if(count < 10){
+                var auto = setInterval(function(){
+                    count++;
+                    $("body").html(count);
+                }, 1000)
+            }esle{
+                clearInterval(auto);
+
+
+            }
+        
+
+        })
+        // // $(document).ready(function(){
+        // //     $("button + div").html("<h1>제이쿼리 처음 출력해보기</h1>")
+        // //     $("h1").css('color','red');
+        // //     // $(".box + div").html("안녕");
+        // //     $("div:last-child").html("안녕");
+        // })
+    </script>
+</head>
+<body>
+    <button>출력해줘</button>
+    <div>태그로 접근하기</div>
+    <div class="box">클래스로 접근해줘</div>
+    <div>나한테 안녕이라고</div>
+</body>
+</html>
